@@ -12,55 +12,30 @@
 	
 <body>
 
-<style>
-
-.reddot {
-  border-radius: 5px;
-  background: #f00;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 10px;
-  right: 40px;
-}	
-	
-</style>
-		
-<center>
-	
-	<table border=0 width=100% height=100%>
-		<tr>
-			<td colspan=2 style="width:100%">
-				<img style="vertical-align:middle" src="../images/minima.png" height=20>&nbsp;Minima Wallet
-			</td>
-			<td style="text-align:right">
-				<div id="id_pending_reddot" class="reddot"></div>
-				<img id="id_img_logout" title="Logout" style="cursor: pointer;vertical-align:middle" src="../images/logout.webp" height=20>
-				&nbsp;&nbsp;<img id="id_img_pending" title="Pending Transactions" style="cursor: pointer;vertical-align:middle" src="../images/pending.png" height=20>
-				&nbsp;&nbsp;<img title="Settings" id="id_img_settings" style="cursor: pointer;vertical-align:middle" src="../images/settings.png" height=20>
-			</td>
-		</tr>
-		<tr height=100%>
-			<td colspan=3>
-				<div id='outerdiv' style="width:100%;height:100%;overflow-x:hidden;">
-					<iframe src="balance.html" width="100%" height=100% frameborder="0" id='mainiframe' 
-					style="overflow-x: hidden; overflow-y: scroll;"> </iframe>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:33%">
-				<button style="width:100%;" class="menubtn" id="id_wallet_balance">Balance</button>
-			</td>
-			<td style="width:33%">
-				<button style="width:100%;" class="menubtn" id="id_wallet_send">Send</button>					
-			</td>
-			<td style="width:33%">
-				<button style="width:100%;" class="menubtn" id="id_wallet_receive">Receive</button>				
-			</td>
-		</tr>
-		
-	<table>		
+<center class="wallet-shell">
+	<header class="wallet-header">
+		<div class="wallet-brand"><img src="../images/minima.png" alt="Minima"><span>Wallet</span></div>
+		<div class="wallet-tools">
+			<button class="icon-button" id="id_img_logout" title="Logout" aria-label="Logout">
+				<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 5H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4M14 8l4 4-4 4M8 12h10"/></svg>
+			</button>
+			<button class="icon-button pending-button" id="id_img_pending" title="Pending Transactions" aria-label="Pending Transactions">
+				<span id="id_pending_reddot" class="reddot"></span>
+				<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg>
+			</button>
+			<button class="icon-button" id="id_img_settings" title="Settings" aria-label="Settings">
+				<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="outerdiv" class="wallet-content">
+		<iframe src="balance.html" title="Wallet content" id="mainiframe"></iframe>
+	</div>
+	<nav class="wallet-nav" aria-label="Wallet navigation">
+		<button class="menubtn" id="id_wallet_balance">Balance</button>
+		<button class="menubtn" id="id_wallet_send">Send</button>
+		<button class="menubtn" id="id_wallet_receive">Receive</button>
+	</nav>
 		
 	<script src="./js/wallet.js"></script>
 

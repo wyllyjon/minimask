@@ -13,25 +13,14 @@
 <body>
 	
 <center>
-	<br>
-	<h2>New Wallet</h2>    
-	
-	We will now create a new wallet<br>
-	<br>
-	Please save this seed securely<br>
-	<br>
-	
-	<div id="id_seed_phrase" style="font-size:12;">Generating..</div>
-	
-	<br>
-	<table width=220>
-		<tr>
-			<td style="text-align:left;"><button class="mybtn" id="id_btn_cancelwallet">Cancel</button></td>
-			<td style="text-align:right;"><button class="mybtn" id="id_btn_proceedwallet">Proceed</button></td>
-		</tr>	
-	</table>
-	<br>
-	<br>
+	<p class="eyebrow">Wallet setup</p>
+	<h2>New Wallet</h2>
+	<p class="intro-copy">We will now create a new wallet. Please save this seed securely.</p>
+	<div id="id_seed_phrase">Generating..</div>
+	<div class="button-row">
+		<button class="mybtn secondary-action" id="id_btn_cancelwallet">Cancel</button>
+		<button class="mybtn" id="id_btn_proceedwallet">Proceed</button>
+	</div>
 		
 	<script src="./js/newwallet.js"></script>
 

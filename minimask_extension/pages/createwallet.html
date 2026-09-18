@@ -13,32 +13,19 @@
 <body>
 	
 <center>
-	<br>
-	<h2>Restore Wallet</h2>    
-	
-	Restore your wallet from a seed<br>
-	<br>
-	Please type in your seed : <br>
-	<br>
-	<input id="id_seed_txt" type="password" style="width:220"><br>
-	<br>
-	
-	<span style="font-size:12;">
-		Don't forget to check your <b>key uses</b> in Settings..
-	</span><br>
-		
-	<br>
-	<table width=220>
-		<tr>
-			<td style="text-align:left;"><button class="mybtn" id="id_btn_cancelwallet">Cancel</button></td>
-			<td style="text-align:right;"><button class="mybtn" id="id_btn_restorewallet">Proceed</button></td>
-		</tr>	
-	</table>
-	<br>
-	<br>
+	<p class="eyebrow">Wallet setup</p>
+	<h2>Restore Wallet</h2>
+	<p class="intro-copy">Restore your wallet from a seed.</p>
+	<label class="field-label" for="id_seed_txt">Please type in your seed</label>
+	<input id="id_seed_txt" type="password">
+	<p class="helper-copy">Don't forget to check your <b>key uses</b> in Settings.</p>
+	<div class="button-row">
+		<button class="mybtn secondary-action" id="id_btn_cancelwallet">Cancel</button>
+		<button class="mybtn" id="id_btn_restorewallet">Proceed</button>
+	</div>
 
 	<div id="generate_wait" class="overlay-box">
-			<br>Generating.. pls wait..
+			Generating.. pls wait..
 	</div>
 			
 	<script src="./js/createwallet.js"></script>

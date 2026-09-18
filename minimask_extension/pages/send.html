@@ -12,83 +12,43 @@
 	
 <body>
 
-<style>
-	table {
-		border: 1px solid black;
-		border-collapse: collapse;
-	}
-	td {
-		border: 1px solid white;
-	  	background-color: #eeeeee;
-	  	padding: 2;
-	}
-	
-	.overlay-box {
-		width: 250px;
-		height: 80px;
-		
-		border : 1px solid red; 
-		border-radius: 20px;
-			
-		position:absolute;
-	    top:50%;
-	    left:50%;
-	    transform:translate(-50%, -50%);
-	    background: #eeeeee; 
-		opacity: .9;
-	    z-index: 1000;
-		
-		display:none;
-	}
-	
-	.righttd{
-		width:100;
-		text-align:right;
-	}
-	
-</style>
-	
 <h3>Send</h3>
 <center>
 	
 	<table style="width:100%;">
 		<tr>
 			<td class="righttd" nowrap>Token : </td>
-			<td><select id="select_token" style="width:90%"></td>
+			<td><select id="select_token"></select></td>
 		</tr>
 		
 		<tr>
 			<td class="righttd" nowrap>Amount : </td>
-			<td><input id="send_amount" type=text style="width:90%"></td>
+			<td><input id="send_amount" type="text"></td>
 		</tr>
 		
 		<tr>
 			<td class="righttd" nowrap>Address : </td>
-			<td><input id="send_address" type=text style="width:90%"></td>
+			<td><input id="send_address" type="text"></td>
 		</tr>
 		
-		<tr><td colspan=2>&nbsp;</td></tr>
 		<tr>
 			<td class="righttd" nowrap>Key Uses : </td>
-			<td><input id="send_keyuses" type=number style="width:90%"></td>
+			<td><input id="send_keyuses" type="number"></td>
 		</tr>
 		
 	</table>
 	
-	<div style="font-size:10;">
-		<br>
+	<div class="helper-copy">
 		You can set key uses manually in <a href='./settings.html'>Settings</a><br>
 		
 	</div>
 	
-	<br>
 	<button class="mybtn" id="id_btn_send">Send Funds</button>
-	<br>	
 	
 	  
 	
 	<div id="send_wait" class="overlay-box">
-		<br>Sending.. pls wait..
+		Sending.. pls wait..
 	</div>
 		
 	<script type="text/javascript" src="./js/send.js"></script>
